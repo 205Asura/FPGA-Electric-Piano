@@ -35,7 +35,7 @@ The keyboard keys from 'q' to ']' are mapped to a 12-note scale (one octave). Oc
 ## Usage
 1. Connect the USB keyboard to your PC.
    
-2. Use a micro USB cable to connect your PC to the Basys 3 board's JTAG/UART USB port. This will appear as a serial port (e.g., COM4 on Windows; check Device Manager to confirm the port).
+2. Use a micro USB cable to connect your PC to the Basys 3 board's JTAG/UART USB port. This will appear as a serial port (e.g., COM4 on Windows; check Device Manager to confirm the port and change it in the python script at `serial.Serial('COM4', 9600, timeout=1)`).
    
 3. Attach the passive buzzer to the appropriate output Pmod JA on the Basys 3 (e.g., connect signal pin to JA1, GND pin to GND, if there is a VCC then connect it to either 3.3V or 5V base on your buzzer). The FPGA constraints file is already setup accordingly.
    
