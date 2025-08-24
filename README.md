@@ -11,7 +11,11 @@ The keyboard keys from 'q' to ']' are mapped to a 12-note scale (one octave). Oc
 - **Octave Control**: BTNU and BTND button on Basys 3 shifts up/down one octave.
 - **Audio Output**: PWM Tone generation via a passive buzzer connected to the Basys 3.
 
-  <img width="673" height="657" alt="image" src="https://github.com/user-attachments/assets/708448db-84a3-45d1-b2ca-e37c5c30a708" />
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/708448db-84a3-45d1-b2ca-e37c5c30a708" alt="Basys 3" width="600"/>
+  <br>
+  <i>Figure 1: Basys 3 features</i>
+</p>
 
 
 ## Hardware Requirements
@@ -20,6 +24,7 @@ The keyboard keys from 'q' to ']' are mapped to a 12-note scale (one octave). Oc
 - Micro USB cable for connecting PC to Basys 3 (JTAG/UART port).
 - Passive buzzer (connected to a GPIO pin on the Basys 3, e.g., via PMOD or onboard header).
 - PC with USB ports and serial communication capability.
+
 
 ## Software Requirements
 - Xilinx Vivado (for synthesizing and programming the FPGA design).
@@ -37,7 +42,14 @@ The keyboard keys from 'q' to ']' are mapped to a 12-note scale (one octave). Oc
    
 2. Use a micro USB cable to connect your PC to the Basys 3 board's JTAG/UART USB port. This will appear as a serial port (e.g., COM4 on Windows; check Device Manager to confirm the port and change it in the python script at `serial.Serial('COM4', 9600, timeout=1)`).
    
-3. Attach the passive buzzer to the appropriate output Pmod JA on the Basys 3 (e.g., connect signal pin to JA1, GND pin to GND, if there is a VCC then connect it to either 3.3V or 5V base on your buzzer). The FPGA constraints file is already setup accordingly.
+3. Attach the passive buzzer to the appropriate output Pmod JA on the Basys 3 (e.g., connect SIG pin to JA1, GND pin to GND, if there is a VCC then connect it to either 3.3V or 5V base on your buzzer). The FPGA constraints file is already setup accordingly.
+ <p align="center">
+  <img src="https://github.com/user-attachments/assets/caaa2c41-dd74-4d6b-bb91-073abe6db02e" alt="Buzzer" width="300"/>
+  <br>
+  <i>Figure 2: Four pins a buzzer can have</i>
+</p>
+
+ 
    
 4. Program the Basys 3 with the FPGA bitstream.
  
