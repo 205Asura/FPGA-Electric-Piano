@@ -10,10 +10,19 @@ def main():
             print(f"Connected to {ser.port}")
             print("Press keys (q-] for notes, ESC to exit)...")
 
-            key_to_code = {
-                'q': 2, 'w': 3, 'e': 4, 'r': 5,
-                't': 6, 'y': 7, 'u': 8, 'i': 9,
-                'o': 10, 'p': 11, '[': 12, ']': 13,
+            key_to_code = { # Starting at C6
+                'q': 2, 
+                'w': 3, 
+                'e': 4, 
+                'r': 5,
+                't': 6, 
+                'y': 7, 
+                'u': 8, 
+                'i': 9,
+                'o': 10, 
+                'p': 11, 
+                '[': 12, 
+                ']': 13,
             }
 
             running = True
@@ -28,12 +37,10 @@ def main():
                     ser.write(bytes([code]))
                     print(f"Sent code: {code} for key {event.name}")
 
-            # Gắn handler với suppress=True
             for key in key_to_code.keys():
                 keyboard.on_press_key(key, handler, suppress=True)
             keyboard.on_press_key('esc', handler, suppress=True)
 
-            # Vòng lặp chính giữ chương trình chạy
             while running:
                 time.sleep(0.1)
 
