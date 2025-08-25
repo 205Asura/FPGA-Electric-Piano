@@ -4,22 +4,24 @@ This project implements a electric piano synthesizer on the Digilent Artix-7 Bas
 
 The keyboard keys from 'q' to ']' are mapped to a 12-note scale (one octave). Octave shifting is handled by the BTNU (up) and BTND (down) buttons on the Basys 3 board, allowing you to increase or decrease the pitch by one octave.
 
-## Features
+## How it works
 - **USB Keyboard Input**: Use your computer's USB keyboard as piano keys.
 - **UART Communication**: PC sends key data to Basys 3 via serial port (e.g., COM4 on Windows).
 - **Note Mapping**: Keys 'q' to ']' correspond to 12 notes in a chromatic scale.
 - **Octave Control**: BTNU and BTND button on Basys 3 shifts up/down one octave.
 - **Audio Output**: PWM Tone generation via a passive buzzer connected to the Basys 3.
 
-  <img width="673" height="657" alt="image" src="https://github.com/user-attachments/assets/708448db-84a3-45d1-b2ca-e37c5c30a708" />
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/708448db-84a3-45d1-b2ca-e37c5c30a708" alt="Basys 3" width="600"/>
+  <br>
+  <i>Figure 1: Basys 3 features</i>
+</p>
 
 
 ## Hardware Requirements
-- Digilent Basys 3 FPGA board (or any kind of FPGA board that has UART USB port).
+- Digilent Basys 3 FPGA board (or any kind of FPGA board that has UART USB port) and a Micro USB cable for connecting (JTAG/UART port).
 - Standard USB keyboard (connected to your PC).
-- Micro USB cable for connecting PC to Basys 3 (JTAG/UART port).
-- Passive buzzer (connected to a GPIO pin on the Basys 3, e.g., via PMOD or onboard header).
-- PC with USB ports and serial communication capability.
+- Passive buzzer (connected to Pmod pins on the Basys 3)
 
 ## Software Requirements
 - Xilinx Vivado (for synthesizing and programming the FPGA design).
@@ -35,9 +37,16 @@ The keyboard keys from 'q' to ']' are mapped to a 12-note scale (one octave). Oc
 ## Usage
 1. Connect the USB keyboard to your PC.
    
-2. Use a micro USB cable to connect your PC to the Basys 3 board's JTAG/UART USB port. This will appear as a serial port (e.g., COM4 on Windows; check Device Manager to confirm the port).
+2. Use a micro USB cable to connect your PC to the Basys 3 board's JTAG/UART USB port. This will appear as a serial port (e.g., COM4 on Windows; check Device Manager to confirm the port and change it in the python script at `serial.Serial('COM4', 9600, timeout=1)`).
    
-3. Attach the passive buzzer to the appropriate output Pmod JA on the Basys 3 (e.g., connect signal pin to JA1, GND pin to GND, if there is a VCC then connect it to either 3.3V or 5V base on your buzzer). The FPGA constraints file is already setup accordingly.
+3. Attach the passive buzzer to the appropriate output Pmod JA on the Basys 3 (e.g., connect SIG pin to JA1, GND pin to GND, if there is a VCC then connect it to either 3.3V or 5V base on your buzzer). The FPGA constraints file is already setup accordingly.
+ <p align="center">
+  <img src="https://github.com/user-attachments/assets/caaa2c41-dd74-4d6b-bb91-073abe6db02e" alt="Buzzer" width="300"/>
+  <br>
+  <i>Figure 2: Four pins a buzzer can have</i>
+</p>
+
+ 
    
 4. Program the Basys 3 with the FPGA bitstream.
  
