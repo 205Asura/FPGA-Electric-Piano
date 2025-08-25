@@ -24,7 +24,7 @@ module Piano
     reg note_active;
     reg new_note_received; // Flag to indicate new note
     
-    reg signed [3:0] octave_shift;
+    reg signed [3:0] octave_shift = 1;
     reg prev_btn_increase;
     reg prev_btn_decrease;
     wire debounced_increase;
