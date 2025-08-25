@@ -4,7 +4,7 @@ This project implements a electric piano synthesizer on the Digilent Artix-7 Bas
 
 The keyboard keys from 'q' to ']' are mapped to a 12-note scale (one octave). Octave shifting is handled by the BTNU (up) and BTND (down) buttons on the Basys 3 board, allowing you to increase or decrease the pitch by one octave.
 
-## Features
+## How it works
 - **USB Keyboard Input**: Use your computer's USB keyboard as piano keys.
 - **UART Communication**: PC sends key data to Basys 3 via serial port (e.g., COM4 on Windows).
 - **Note Mapping**: Keys 'q' to ']' correspond to 12 notes in a chromatic scale.
