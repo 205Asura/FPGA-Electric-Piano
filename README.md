@@ -23,8 +23,6 @@ The keyboard keys from 'q' to ']' are mapped to a 12-note scale (one octave). Oc
 - Standard USB keyboard (connected to your PC).
 - Micro USB cable for connecting PC to Basys 3 (JTAG/UART port).
 - Passive buzzer (connected to a GPIO pin on the Basys 3, e.g., via PMOD or onboard header).
-- PC with USB ports and serial communication capability.
-
 
 ## Software Requirements
 - Xilinx Vivado (for synthesizing and programming the FPGA design).
