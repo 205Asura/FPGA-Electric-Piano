@@ -1,7 +1,7 @@
 module Piano
 #
 (
-    parameter duration = 25_000_000 // 1.0s duration (100MHz clock)
+    parameter duration = 50_000_000 // 0.25s duration (100MHz clock)
 )
 (
     input clk,       // 100MHz FPGA Bays 3 Board Clock
