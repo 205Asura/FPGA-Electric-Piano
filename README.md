@@ -19,10 +19,9 @@ The keyboard keys from 'q' to ']' are mapped to a 12-note scale (one octave). Oc
 
 
 ## Hardware Requirements
-- Digilent Basys 3 FPGA board (or any kind of FPGA board that has UART USB port).
+- Digilent Basys 3 FPGA board (or any kind of FPGA board that has UART USB port) and a Micro USB cable for connecting (JTAG/UART port).
 - Standard USB keyboard (connected to your PC).
-- Micro USB cable for connecting PC to Basys 3 (JTAG/UART port).
-- Passive buzzer (connected to a GPIO pin on the Basys 3, e.g., via PMOD or onboard header).
+- Passive buzzer (connected to Pmod pins on the Basys 3)
 
 ## Software Requirements
 - Xilinx Vivado (for synthesizing and programming the FPGA design).
