@@ -1,8 +1,6 @@
 # FPGA Electric Piano on Artix-7
 
-This project implements a electric piano synthesizer on the Digilent Artix-7 Basys 3 FPGA board. It uses a standard USB keyboard connected to a PC as the input device. Key presses are captured and forwarded to the Basys 3 via a Python script over UART (through the micro USB cable connected to the JTAG/UART port). The FPGA generates corresponding musical notes and outputs them to a passive buzzer for audio playback.
-
-The keyboard keys from 'q' to ']' are mapped to a 12-note scale (one octave). Octave shifting is handled by the BTNU (up) and BTND (down) buttons on the Basys 3 board, allowing you to increase or decrease the pitch by one octave.
+This project implements a electric piano synthesizer on the Digilent Artix-7 Basys 3 FPGA board. It uses a standard USB keyboard connected to a PC as the input device. Key presses are captured and forwarded to the Basys 3 via a Python script over UART. The FPGA generates corresponding musical notes and outputs them to a passive buzzer for audio playback.
 
 ## How it works
 - **USB Keyboard Input**: Use your computer's USB keyboard as piano keys.
