@@ -2,7 +2,32 @@
 
 This project implements a electric piano synthesizer on the Digilent Artix-7 Basys 3 FPGA board. It uses a standard USB keyboard connected to a PC as the input device. Key presses are captured and forwarded to the Basys 3 via a Python script over UART. The FPGA generates corresponding musical notes and outputs them to a passive buzzer for audio playback.
 
-## 📖 Description
+## Table of Contents
+1. [Project Structure](#project-structure)
+2. [Description](#-description)
+3. [Hardware Requirements](#️-hardware-requirements)
+4. [Software Requirements](#-software-requirements)
+5. [Installation](#-installation)
+6. [Usage](#️-usage)
+7. [Future Improvements](#-future-improvements)
+
+## 1. Project Structure
+```
+FPGA-Electric-Piano/
+├── Constraint/
+│   └── Basys-3-Master.xdc
+├── Python Script/
+│   └── key_to_uart.py
+├── README.md
+└── Verilog Source/
+    ├── debounce.v
+    ├── DFF.v
+    ├── Piano.v
+    ├── PWM.v
+    └── UART_Rx.v
+```
+
+## 2. Description
 - **USB Keyboard Input**: Use your computer's USB keyboard as piano keys.
 - **UART Communication**: PC sends key data to Basys 3 via serial port (e.g., COM4 on Windows).
 - **Note Mapping**: Keys 'q' to ']' correspond to 12 notes in a chromatic scale.
@@ -17,16 +42,16 @@ This project implements a electric piano synthesizer on the Digilent Artix-7 Bas
 </p>
 
 
-## 🛠️ Hardware Requirements
+## 3. Hardware Requirements
 - Digilent Basys 3 FPGA board (or any kind of FPGA board that has UART USB port) and a Micro USB cable for connecting (JTAG/UART port).
 - Standard USB keyboard (connected to your PC).
 - Passive buzzer (connected to Pmod pins on the Basys 3)
 
-## 💻 Software Requirements
+## 4. Software Requirements
 - Xilinx Vivado (for synthesizing and programming the FPGA design).
 - Python 3.x
 
-## 📦 Installation
+## 5. Installation
 - `pyserial` and `keyboard` library for Python:
   
   ```
@@ -35,7 +60,7 @@ This project implements a electric piano synthesizer on the Digilent Artix-7 Bas
 - Download the python script.
 - Download all the `.v` and `.xdc` files in this repo and add to a new project in Vivado, set `Piano.v` as top hierarchy.
 
-## ▶️ Usage
+## 6. Usage
 1. Connect the USB keyboard to your PC.
    
 2. Use a micro USB cable to connect your PC to the Basys 3 board's JTAG/UART USB port. This will appear as a serial port (e.g., COM4 on Windows; check Device Manager to confirm the port and change it in the python script at `serial.Serial('COM4', 9600, timeout=1)`).
@@ -57,7 +82,7 @@ This project implements a electric piano synthesizer on the Digilent Artix-7 Bas
  
 7. Use BTNU/BTND on Basys 3 to shift up/down music tone.
 
-## ⏳ Future Improvements
+## 7. Future Improvements
 - Add polyphony
 - Changing timbre using sine-wave
 
