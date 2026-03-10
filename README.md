@@ -1,4 +1,4 @@
-# FPGA Electric Piano on Artix-7
+# FPGA Electric Piano 🎹
 
 This project implements a electric piano synthesizer on the Digilent Artix-7 Basys 3 FPGA board. It uses a standard USB keyboard connected to a PC as the input device. Key presses are captured and forwarded to the Basys 3 via a Python script over UART. The FPGA generates corresponding musical notes and outputs them to a passive buzzer for audio playback.
 
