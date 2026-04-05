@@ -14,12 +14,11 @@ This project implements a electric piano synthesizer on the Digilent Artix-7 Bas
 ## 1. Project Structure
 ```
 FPGA-Electric-Piano/
-├── Constraint/
+├── constraint/
 │   └── Basys-3-Master.xdc
-├── Python Script/
+├── python/
 │   └── key_to_uart.py
-├── README.md
-└── Verilog Source/
+└── rtl/
     ├── debounce.v
     ├── DFF.v
     ├── Piano.v
